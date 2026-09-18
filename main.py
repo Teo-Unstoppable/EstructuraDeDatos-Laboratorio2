@@ -7,6 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1pwhFJsDy80ei-uZKD0fzDA-HcnePVheY
 """
 
+
 """
 Experimento:
 
@@ -16,6 +17,7 @@ Experimento:
 4 Generar una prueba de inclusión para la transacción 3 y verificar que es válida.
 5 verificar con un dato incorrecto → debe fallar.
 """
+
 
 from merkletree import MerkleTree
 
