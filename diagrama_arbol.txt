@@ -1,0 +1,25 @@
+Diagrama del Árbol de Merkle construido con las 5 transacciones de ejemplo
+(cada hash está truncado a 8 caracteres para legibilidad; el hash completo
+se calcula con SHA-256)
+
+                                   ROOT
+                                4bf067a4
+                              /            \
+                     259dd8a4                a1889b9f
+                    /        \              /        \
+              d3eeaef9    7af118fc    6a6decc8    6a6decc8*
+              /     \      /     \      /     \      (dup)
+          420155a1 3a6cbc12 d0b1b3e2 23075a53 41a0be1a 41a0be1a*
+             |         |        |        |        |       (dup)
+            TX1       TX2      TX3      TX4      TX5
+
+* Como el número de hojas (5) es impar, la última hoja (TX5) se duplica
+  para poder emparejarla y calcular el nivel superior. Lo mismo ocurre
+  con el nodo intermedio resultante (6a6decc8), que también queda impar
+  en su nivel y se duplica antes de subir a la raíz.
+
+Estructura de niveles (ver output_log.txt para los hashes completos):
+  NIVEL 0 (hojas):    hash(TX1) hash(TX2) hash(TX3) hash(TX4) hash(TX5) hash(TX5)
+  NIVEL 1:            hash(N0+N1) hash(N2+N3) hash(N4+N5) [duplicado]
+  NIVEL 2:            hash(N0+N1) hash(N2+N3*)
+  ROOT:               hash(NIVEL2[0] + NIVEL2[1])
