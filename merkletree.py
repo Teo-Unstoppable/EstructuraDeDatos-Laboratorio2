@@ -136,3 +136,5 @@ class MerkleTree:
             hashes = "  ".join(h[:short] for h in level)
             lines.append(f"{label:>8}: {hashes}")
         return "\n".join(lines)
+
+
