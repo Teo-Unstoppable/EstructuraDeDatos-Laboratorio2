@@ -79,4 +79,4 @@ Esto ejecuta el experimento completo e imprime los resultados en consola
   - `render_ascii()`: genera la representación ASCII del árbol.
 - `main.py`: orquesta los 5 pasos del experimento solicitado en el enunciado.
 
-Nota: Se uso IA en parte del codigo y para la documentacion el README.
+Nota: Se uso Gemini Flash en Colab en una parte del código y para la redacción de la documentación el README.
